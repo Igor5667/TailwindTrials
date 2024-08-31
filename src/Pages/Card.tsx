@@ -1,7 +1,13 @@
-function Card() {
+interface CardProps {
+  className?: string;
+}
+
+function Card({ className }: CardProps) {
   return (
     <div>
-      <section className="h-screen bg-emerald-200 flex items-center justify-center ">
+      <section
+        className={`h-screen bg-emerald-200 flex items-center justify-center ${className}`}
+      >
         <p
           className="w-[90%] md:w-[65%] lg:w-1/2 h-1/2 text-center text-3xl flex items-center
          justify-center bg-emerald-300 shadow-lg hover:shadow-emerald-700 transition 

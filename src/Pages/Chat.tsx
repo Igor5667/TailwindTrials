@@ -2,10 +2,16 @@ import { useState } from "react";
 import { TiThMenu } from "react-icons/ti";
 import PhoneMenu from "../Components/PhoneMenu";
 
-function Chat() {
+interface ChatProps {
+  className?: string;
+}
+
+function Chat({ className }: ChatProps) {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+
   return (
-    <div className="h-screen w-full text-white text-3xl">
+    <div className={`h-screen w-full text-white text-3xl ${className}`}>
+      {isMenuOpen && <PhoneMenu setIsMenuOpen={setIsMenuOpen} />}
       <div className="h-[15%] bg-slate-900  border-b-[1px] border-white flex items-center justify-center">
         <TiThMenu
           className="ml-5 md:hidden"
@@ -20,7 +26,7 @@ function Chat() {
         >
           left article
         </div>
-        {isMenuOpen && <PhoneMenu setIsMenuOpen={setIsMenuOpen} />}
+
         <div
           className="h-full md:w-[80%] bg-slate-700 flex flex-col
         w-full"
