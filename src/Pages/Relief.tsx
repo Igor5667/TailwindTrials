@@ -5,6 +5,7 @@ interface ReliefProps {
 }
 function Relief({ className }: ReliefProps) {
   const [isActive, setIsActive] = useState([true, true, true]);
+  const [isFormShown, setIsFormShown] = useState(true);
   const [numberOfButtons, setNumberOfButtons] = useState(3);
 
   const toggleActive = (index: number) => {
@@ -22,26 +23,36 @@ function Relief({ className }: ReliefProps) {
       newArr.push(true);
     }
     setIsActive(newArr);
+    setIsFormShown(false);
   };
 
   return (
     <div
-      className={`h-screen w-full bg-slate-200 flex justify-center items-center flex-wrap content-center gap-8  ${className}`}
+      className={`h-screen w-full relative overflow-hidden bg-slate-200 flex justify-center items-center flex-wrap content-center gap-8  ${className}`}
     >
-      <div className="absolute top-2 left-1/2 translate-x-[-50%] flex flex-col items-center gap-2">
-        How much do you wanna have circles?
-        <input
-          value={numberOfButtons}
-          onChange={(e) => setNumberOfButtons(+e.target.value)}
-          type="number"
-          className="concave rounded-3xl p-2 bg-slate-200 focus:outline-none text-center"
-        />
-        <button
-          className="convex submit-button-relief rounded-3xl p-2 px-4 bg-slate-200 w-min text-sm"
-          onClick={addButtons}
-        >
-          Submit
-        </button>
+      <div className="absolute top-0 left-1/2 translate-x-[-50%] flex flex-col items-center gap-2  p-4 text-center">
+        <h1 className="font-bold text-3xl">Just CLick it</h1>
+        {!isFormShown ? (
+          <button
+            className="submit-button-relief"
+            onClick={() => setIsFormShown(true)}
+          >
+            add buttons
+          </button>
+        ) : (
+          <>
+            <h2>How much do you wanna have circles?</h2>
+            <input
+              value={numberOfButtons}
+              onChange={(e) => setNumberOfButtons(+e.target.value)}
+              type="number"
+              className="concave rounded-3xl p-2 bg-slate-200 focus:outline-none text-center"
+            />
+            <button className="submit-button-relief" onClick={addButtons}>
+              Submit
+            </button>
+          </>
+        )}
       </div>
       {isActive.map((active, index) => (
         <div
