@@ -6,16 +6,14 @@ interface TwitterProps {
 
 function Twitter({ className }: TwitterProps) {
   return (
-    <div
-      className={`h-screen w-full flex items-center justify-center flex-col  text-twitter-blue ${className}`}
-    >
-      <div className="mt-auto flex flex-col justify-center items-center gap-4">
-        <FaTwitter size={60} />
-        <i>Always in our minds</i>
+    <div className={`twitter-page  ${className}`}>
+      <div className="mt-auto flex flex-col justify-center items-center gap-6">
+        <FaTwitter size={100} />
+        <i className="text-lg">Always in our minds</i>
       </div>
-      <i className="text-xs mt-auto mb-2">
+      <i className="text-sm mt-auto mb-3 md:mb-0 text-center p-4">
         This page is for learn extending colors in Tailwind CSS using Twitter
-        blue color #1DA1F2
+        blue color #1DA1F2 and discovered @apply in css file
       </i>
     </div>
   );

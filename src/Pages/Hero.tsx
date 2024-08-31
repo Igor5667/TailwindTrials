@@ -17,11 +17,11 @@ function Hero({ className }: HeroProps) {
       <div className="flex flex-col justify-center items-center h-full text-center lg:absolute lg:mt-20 lg:left-16">
         <h1
           className=" font-bold tracking-tighter p-4 bg-gradient-to-r from-[#80fbfd] to-[#d718e9] bg-clip-text text-transparent
-         text-5xl md:text-7xl lg:text-8xl"
+         text-4xl md:text-5xl lg:text-7xl"
         >
-          Hi, this is training site
+          Hi, this is a Tailwind CSS training site
         </h1>
-        <div className="md:ps-10 text-xl">
+        <div className="md:ps-10 text-xl md:text-2xl lg:text-4xl">
           <p className=" font-semibold">
             Created by <i className="font-extralight ms-1 mt-5">IGOR DLUGON</i>
           </p>
