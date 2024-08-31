@@ -16,8 +16,18 @@ function Relief({ className }: ReliefProps) {
 
   return (
     <div
-      className={`h-screen w-full bg-slate-200 flex justify-center items-center gap-8 flex-wrap ${className}`}
+      className={`h-screen w-full bg-slate-200 flex justify-center items-center flex-wrap content-center gap-8  ${className}`}
     >
+      <div className="absolute top-2 left-1/2 translate-x-[-50%] flex flex-col items-center gap-2">
+        How much do you wanna have circles?
+        <input
+          type="number"
+          className="concave rounded-3xl p-2 bg-slate-200 focus:outline-none text-center"
+        />
+        <button className="convex submit-button-relief rounded-3xl p-2 px-4 bg-slate-200 w-min text-sm">
+          Submit
+        </button>
+      </div>
       {isActive.map((active, index) => (
         <div
           key={index}

@@ -18,3 +18,9 @@
       inset 3px 3px 10px 0px rgba(0, 0, 0, 0.5);
   }
 }
+
+.submit-button-relief:active {
+  box-shadow:
+    inset -3px -3px 10px 0px rgba(255, 255, 255, 0.5),
+    inset 3px 3px 10px 0px rgba(0, 0, 0, 0.5);
+}

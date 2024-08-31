@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { TiThMenu } from "react-icons/ti";
 import PhoneMenu from "../Components/PhoneMenu";
 
@@ -9,13 +9,20 @@ interface ChatProps {
 function Chat({ className }: ChatProps) {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
+  useEffect(() => {
+    console.log("is menu open? ", isMenuOpen);
+  }, [isMenuOpen]);
+
   return (
     <div className={`h-screen w-full text-white text-3xl ${className}`}>
       {isMenuOpen && <PhoneMenu setIsMenuOpen={setIsMenuOpen} />}
       <div className="h-[15%] bg-slate-900  border-b-[1px] border-white flex items-center justify-center">
         <TiThMenu
           className="ml-5 md:hidden"
-          onClick={() => setIsMenuOpen(true)}
+          onClick={() => {
+            setIsMenuOpen(true);
+            console.log("hi");
+          }}
         />
         <h1 className="text-center mx-auto text-3xl">Chat</h1>
       </div>

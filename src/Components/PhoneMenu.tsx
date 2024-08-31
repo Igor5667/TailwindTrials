@@ -7,7 +7,7 @@ interface PropsPhoneMenu {
 function PhoneMenu({ setIsMenuOpen }: PropsPhoneMenu) {
   return (
     <div
-      className={`absolute h-screen w-[80%] md:hidden flex justify-between px-4 pt-7 z-10
+      className={`absolute top-0 left-0 h-screen w-[80%] md:hidden flex justify-between px-4 pt-7 z-10
                   background-glass  `}
     >
       <h2 className="h-min text-3xl">PHONE MENU</h2>
